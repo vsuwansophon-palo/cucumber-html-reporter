@@ -7,6 +7,7 @@ var assertHtmlReports = require('./assert/assertHtmlReports');
 var theme = {
     hierarchy: 'hierarchy',
     bootstrap: 'bootstrap',
+    bootstrapBundle: 'bootstrap.bundle',
     foundation: 'foundation',
     simple: 'simple'
 };
@@ -68,6 +69,9 @@ function assertJsonFile() {
     //Generate Simple theme report
     reporter.generate(getJsonFileOptions(theme.simple));
 
+    //Generate Bootstrap Bundle theme report
+    reporter.generate(getJsonFileOptions(theme.bootstrapBundle));
+
     //assert reports
     assertHtmlReports(outputDirectory);
 }
@@ -84,6 +88,9 @@ function assertJsonDir() {
 
     //Generate Simple theme report
     reporter.generate(getJsonDirOptions(theme.simple));
+
+    //Generate Bootstrap Bundle theme report
+    reporter.generate(getJsonDirOptions(theme.bootstrapBundle));
 
     //assert reports
     assertHtmlReports(outputDirectory);
